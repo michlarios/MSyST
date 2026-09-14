@@ -10,6 +10,7 @@ output:
     includes:
       in_header: plantilla/preambulo.tex
 documentclass: article
+lang: es-MX
 classoption:
   - 12pt
   - titlepage
@@ -54,8 +55,8 @@ tabla <- function(DataFrame){
     column_spec(1, border_left = TRUE, border_right = FALSE) %>%
     column_spec(2:(n-1), border_left = FALSE, border_right = FALSE) %>%
     column_spec(n, border_left = FALSE, border_right = TRUE) %>%
-    row_spec(0, background = "#99D8C9", bold = TRUE) %>%
-    row_spec(1:m, background = "#DEEBF7")
+    row_spec(0, background = "#B8901E", color = "white", bold = TRUE) %>%
+    row_spec(1:m, background = "#F3E7C6")
 }
 
 tabla2 <- function(DataFrame){
@@ -69,8 +70,8 @@ tabla2 <- function(DataFrame){
                   position = "center", font_size = 10) %>%
     column_spec(1, border_left = TRUE, border_right = FALSE) %>%
     column_spec(n, border_left = FALSE, border_right = TRUE) %>%
-    row_spec(0, background = "#99D8C9", bold = TRUE) %>%
-    row_spec(1:m, background = "#DEEBF7")
+    row_spec(0, background = "#B8901E", color = "white", bold = TRUE) %>%
+    row_spec(1:m, background = "#F3E7C6")
 }
 ```
 
@@ -257,7 +258,7 @@ ggplot(resumen_semana, aes(x = dia_semana, y = promedio)) +
     vjust = -0.35,
     size = 3.3
   ) +
-  scale_fill_manual(values = c(`FALSE` = "#DEEBF7", `TRUE` = "#99D8C9")) +
+  scale_fill_manual(values = c(`FALSE` = "#F3E7C6", `TRUE` = "#B8901E")) +
   scale_y_continuous(
     labels = label_number(suffix = " mil", scale = 1e-3),
     expand = expansion(mult = c(0, 0.12))
